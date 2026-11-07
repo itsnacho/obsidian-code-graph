@@ -28,10 +28,14 @@ class VaultGenerator:
 
     def generate(self) -> Path:
         """Executes full vault generation."""
-        if self.output_dir.exists():
-            # Clean previous generated notes but preserve any user files if needed
-            shutil.rmtree(self.output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Safely clean only .md files previously generated in this directory
+        for item in self.output_dir.glob("*.md"):
+            try:
+                item.unlink()
+            except Exception:
+                pass
 
         # 1. Setup .obsidian configuration (Graph View styling & colors)
         self._write_obsidian_config()
@@ -45,9 +49,19 @@ class VaultGenerator:
 
         return self.output_dir
 
+    def _find_vault_root(self) -> Path:
+        """Finds the root of the Obsidian vault containing .obsidian, or defaults to output_dir."""
+        curr = self.output_dir
+        while curr != curr.parent:
+            if (curr / ".obsidian").exists():
+                return curr
+            curr = curr.parent
+        return self.output_dir
+
     def _write_obsidian_config(self) -> None:
         """Writes preconfigured .obsidian settings for optimal graph physics and node colors."""
-        dot_obsidian = self.output_dir / ".obsidian"
+        vault_root = self._find_vault_root()
+        dot_obsidian = vault_root / ".obsidian"
         dot_obsidian.mkdir(parents=True, exist_ok=True)
 
         app_config = {

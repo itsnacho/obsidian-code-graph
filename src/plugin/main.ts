@@ -106,7 +106,7 @@ export default class CodeGraphPlugin extends Plugin {
       const child = spawn(pythonExe, args, {
         cwd: this.settings.enginePath,
         env: processEnv,
-        shell: process.platform === "win32",
+        shell: false,
       });
 
       let stdoutData = "";
@@ -144,7 +144,8 @@ export default class CodeGraphPlugin extends Plugin {
           }, 600);
         } else {
           console.error("Code Graph error:", stderrData || stdoutData);
-          new Notice(`❌ Generation failed with exit code ${code}. Check developer console.`, 8000);
+          const errDetail = (stderrData || stdoutData).trim();
+          new Notice(`❌ Generation failed: ${errDetail || `exit code ${code}`}`, 10000);
         }
       });
 

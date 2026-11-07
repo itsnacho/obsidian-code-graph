@@ -1,14 +1,14 @@
 # 4-Day Sprint Roadmap
 
 ## 📅 Day 1: Python AST Import Parser & Linker (~2.5 hrs)
-- [ ] Set up directory scanner using `pathlib.Path.rglob("*.py")`
-- [ ] Implement AST visitor using `ast.parse()` to extract:
+- [x] Set up directory scanner using `pathlib.Path.rglob("*.py")`
+- [x] Implement AST visitor using `ast.parse()` to extract:
   - `import x`
   - `from y import z`
   - Relative imports (`from . import a`, `from ..b import c`)
-- [ ] Map internal project imports vs external 3rd-party packages (e.g., standard library vs pip packages)
-- [ ] Build in-memory directed graph of files and dependencies: `{ "module": [dependencies...] }`
-- [ ] Run test on existing Python project (`exml` or `itsnacho`) to verify extracted links
+- [x] Map internal project imports vs external 3rd-party packages (e.g., standard library vs pip packages)
+- [x] Build in-memory directed graph of files and dependencies: `{ "module": [dependencies...] }`
+- [x] Run test on sample project to verify extracted links, cycle detection, and dead code detection
 
 ## 📅 Day 2: Vault Generator & Cycle Detection (~3 hrs)
 - [ ] Implement cycle detection algorithm (Depth-First Search) to catch circular imports

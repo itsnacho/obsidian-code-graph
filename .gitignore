@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+
+# Testing & Linting
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / Obsidian Plugin build artifacts
+node_modules/
+dist/
+build/
+main.js
+manifest.json.tmp
+
+# Output test vaults
+output_vault/
+*.vault/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

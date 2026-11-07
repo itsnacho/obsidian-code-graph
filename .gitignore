@@ -25,6 +25,7 @@ manifest.json.tmp
 
 # Output test vaults
 output_vault/
+sample_vault/
 *.vault/
 
 # IDE / OS

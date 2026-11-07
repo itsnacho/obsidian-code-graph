@@ -11,14 +11,14 @@
 - [x] Run test on sample project to verify extracted links, cycle detection, and dead code detection
 
 ## 📅 Day 2: Vault Generator & Cycle Detection (~3 hrs)
-- [ ] Implement cycle detection algorithm (Depth-First Search) to catch circular imports
-- [ ] Generate Markdown note templates:
+- [x] Implement cycle detection algorithm (Depth-First Search) to catch circular imports
+- [x] Generate Markdown note templates:
   - Frontmatter metadata (`type: module`, `imports_count`, `complexity`)
   - Obsidian wiki-links: `[[imported_module]]`
   - Class and function definitions table/list with docstrings
   - Callout warning box for circular dependencies (`> [!WARNING] Circular Dependency Detected`)
-- [ ] Output generated notes into an `.obsidian` vault structure
-- [ ] **Milestone 1:** Open folder in Obsidian Desktop and verify that the native Graph View renders all nodes and physics connections!
+- [x] Output generated notes into an `.obsidian` vault structure
+- [x] **Milestone 1:** Open folder in Obsidian Desktop and verify that the native Graph View renders all nodes and physics connections!
 
 ## 📅 Day 3: Obsidian TypeScript Plugin Wrapper (~3 hrs)
 - [ ] Initialize Obsidian plugin boilerplate (`manifest.json`, `package.json`, `main.ts`)

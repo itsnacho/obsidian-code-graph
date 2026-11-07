@@ -18,6 +18,7 @@ from src.engine.graph import DependencyGraph
 from src.engine.parser import SourceParser
 from src.engine.resolver import ImportResolver
 from src.engine.scanner import ProjectScanner
+from src.engine.vault_generator import VaultGenerator
 
 
 def analyze_codebase(target_path: Path) -> DependencyGraph:
@@ -120,6 +121,12 @@ def main() -> None:
         default=".",
         help="Path to Python codebase to analyze (default: current directory)",
     )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default=None,
+        help="Directory to output the generated Obsidian vault (e.g. ./output_vault)",
+    )
     args = parser.parse_args()
 
     target_path = Path(args.target)
@@ -129,6 +136,18 @@ def main() -> None:
 
     graph = analyze_codebase(target_path)
     print_summary(graph, target_path)
+
+    if args.output:
+        out_path = Path(args.output)
+        generator = VaultGenerator(graph, out_path, project_name=target_path.name or "Codebase")
+        generated_dir = generator.generate()
+        print(f"🎉 Obsidian Vault successfully generated at:")
+        print(f"   📂 {generated_dir.resolve()}")
+        print("\n👉 How to view in Obsidian:")
+        print("   1. Open Obsidian Desktop")
+        print("   2. Click 'Open folder as vault' (or 'Open vault')")
+        print(f"   3. Select the folder: {generated_dir.resolve()}")
+        print("   4. Press 'Ctrl + G' to see the interactive force-directed graph!\n")
 
 
 if __name__ == "__main__":

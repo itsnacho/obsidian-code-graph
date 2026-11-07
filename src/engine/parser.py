@@ -1,6 +1,7 @@
 """
-AST Parser for Python source files.
-Extracts imports, classes, functions, docstrings, and complexity metadata.
+Python AST parser.
+Uses the standard library `ast` module to pull out imports, docstrings,
+classes, methods, and functions without executing any code.
 """
 
 import ast

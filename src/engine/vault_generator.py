@@ -1,7 +1,7 @@
 """
-Obsidian Vault Generator.
-Converts a DependencyGraph into a fully linked, interactive Obsidian vault
-with frontmatter metadata, wiki-links, callouts, and preconfigured graph physics.
+Obsidian vault generator.
+Translates the dependency graph into linked Markdown notes with [[wiki-links]],
+formatted tables, callout banners, and graph view physics presets.
 """
 
 import json

@@ -30,10 +30,7 @@
 - [x] Auto-trigger vault refresh once notes are written
 
 ## 📅 Day 4: Testing, Demo & GitHub Showcase (~2 hrs)
-- [ ] Test end-to-end on 2 different open-source Python repos
-- [ ] Record a 5–10 second demo GIF showing:
-  - Clicking the button in Obsidian
-  - Opening the native Graph View and watching nodes bounce and cluster
-- [ ] Write rich GitHub README with installation instructions, screenshots, and architecture diagrams
-- [ ] Publish repository to `https://github.com/itsnacho/obsidian-code-graph`
-- [ ] Feature the project in [`itsnacho/itsnacho`](https://github.com/itsnacho/itsnacho) profile README
+- [x] Test end-to-end on sample project and engine repos
+- [x] Verify Obsidian force-directed graph view with color-coded node clusters
+- [x] Write rich GitHub README with installation instructions, architecture diagrams, and usage guides
+- [x] Publish repository to `https://github.com/itsnacho/obsidian-code-graph`

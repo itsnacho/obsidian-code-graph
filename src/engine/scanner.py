@@ -1,12 +1,13 @@
 """
-Directory and file scanner for Python projects.
-Discovers all Python source files and calculates their module dot-notation.
+File crawler for Python projects.
+Walks a folder, grabs all .py files, and turns file paths into Python module names.
 """
 
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Set
 
+# Directories we definitely don't want to parse
 DEFAULT_IGNORE_DIRS: Set[str] = {
     ".git",
     ".hg",
@@ -39,21 +40,18 @@ class DiscoveredModule:
 
 
 class ProjectScanner:
-    """Recursively scans a directory for Python source files."""
+    """Recursively crawls a project tree looking for Python files."""
 
     def __init__(self, root_path: Path, ignore_dirs: Set[str] | None = None):
         self.root_path = root_path.resolve()
         self.ignore_dirs = ignore_dirs if ignore_dirs is not None else DEFAULT_IGNORE_DIRS
 
     def scan(self) -> Dict[str, DiscoveredModule]:
-        """
-        Scans the project directory and returns a dictionary mapping
-        module_name -> DiscoveredModule.
-        """
+        """Walks the directory and returns { module_name: DiscoveredModule }."""
         modules: Dict[str, DiscoveredModule] = {}
 
         for path in self.root_path.rglob("*.py"):
-            # Check if any parent directory is in ignore_dirs
+            # Skip ignored directories (like venv, .git, etc.)
             rel_parts = path.relative_to(self.root_path).parts
             if any(part in self.ignore_dirs for part in rel_parts[:-1]):
                 continue
@@ -73,11 +71,10 @@ class ProjectScanner:
 
     def _compute_module_name(self, rel_path: Path) -> tuple[str, bool]:
         """
-        Converts a relative path to Python module dot-notation.
-        Examples:
-            'auth/service.py' -> ('auth.service', False)
-            'auth/__init__.py' -> ('auth', True)
-            'main.py' -> ('main', False)
+        Turn relative path into dot-notation:
+          'auth/service.py' -> ('auth.service', False)
+          'auth/__init__.py' -> ('auth', True)
+        """
         """
         parts = list(rel_path.with_suffix("").parts)
         is_init = False

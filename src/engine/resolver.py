@@ -1,6 +1,7 @@
 """
-Import Resolver for Python codebases.
-Resolves relative imports and differentiates internal project modules from external/stdlib packages.
+Import resolver.
+Figures out whether an import is pointing to a local file in the project
+or an external library (stdlib / pip package), and handles relative imports (. and ..).
 """
 
 import sys

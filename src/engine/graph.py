@@ -1,6 +1,7 @@
 """
-In-memory directed dependency graph for codebase architecture analysis.
-Computes in-degree, out-degree, cycles, entry points, and orphan modules.
+Directed dependency graph.
+Builds the in-memory graph of modules, calculates in/out degrees,
+finds entry points and orphan files, and runs DFS for cycle detection.
 """
 
 from collections import defaultdict

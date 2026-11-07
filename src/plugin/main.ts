@@ -55,8 +55,7 @@ export default class CodeGraphPlugin extends Plugin {
   }
 
   detectDefaultEnginePath() {
-    // Check common locations: plugin directory's parent (when inside vault plugins folder)
-    // or standard workspace
+    // Look for the engine repo in common locations
     const possiblePaths = [
       "C:\\Users\\Arnav Modi\\Documents\\vscode\\obsidian-code-graph",
       path.resolve(__dirname, "../../.."),

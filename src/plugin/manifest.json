@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-code-graph",
+  "name": "Obsidian Code Graph",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Transforms any codebase into an interactive, physics-driven knowledge graph with circular dependency detection and dead code analysis.",
+  "author": "itsnacho",
+  "authorUrl": "https://github.com/itsnacho",
+  "isDesktopOnly": true
+}

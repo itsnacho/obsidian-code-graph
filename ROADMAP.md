@@ -21,13 +21,13 @@
 - [x] **Milestone 1:** Open folder in Obsidian Desktop and verify that the native Graph View renders all nodes and physics connections!
 
 ## 📅 Day 3: Obsidian TypeScript Plugin Wrapper (~3 hrs)
-- [ ] Initialize Obsidian plugin boilerplate (`manifest.json`, `package.json`, `main.ts`)
-- [ ] Add Command Palette entry: `Code Graph: Analyze Current Project`
-- [ ] Add Sidebar ribbon icon (network graph icon)
-- [ ] Implement folder picker / settings input for Python path and repository path
-- [ ] Spawn Python engine in background via Node's `child_process.execFile`
-- [ ] Display native Obsidian notices (`new Notice("Generating codebase graph...")`, `new Notice("Graph ready!")`)
-- [ ] Auto-trigger vault refresh once notes are written
+- [x] Initialize Obsidian plugin boilerplate (`manifest.json`, `package.json`, `main.ts`)
+- [x] Add Command Palette entry: `Code Graph: Analyze Current Project`
+- [x] Add Sidebar ribbon icon (network graph icon)
+- [x] Implement folder picker / settings input for Python path and repository path
+- [x] Spawn Python engine in background via Node's `child_process.execFile`
+- [x] Display native Obsidian notices (`new Notice("Generating codebase graph...")`, `new Notice("Graph ready!")`)
+- [x] Auto-trigger vault refresh once notes are written
 
 ## 📅 Day 4: Testing, Demo & GitHub Showcase (~2 hrs)
 - [ ] Test end-to-end on 2 different open-source Python repos

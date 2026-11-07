@@ -197,7 +197,6 @@ obsidian-code-graph/
 │       └── manifest.json      # Obsidian plugin metadata
 ├── tests/
 │   └── sample_project/        # Test suite with intentional cycles & orphans
-├── ROADMAP.md                 # 4-day sprint roadmap
 └── README.md
 ```
 

@@ -75,7 +75,6 @@ class ProjectScanner:
           'auth/service.py' -> ('auth.service', False)
           'auth/__init__.py' -> ('auth', True)
         """
-        """
         parts = list(rel_path.with_suffix("").parts)
         is_init = False
 

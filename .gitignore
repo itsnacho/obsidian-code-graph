@@ -20,7 +20,6 @@ htmlcov/
 node_modules/
 dist/
 build/
-main.js
 manifest.json.tmp
 
 # Output test vaults

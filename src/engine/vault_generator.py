@@ -235,8 +235,6 @@ class VaultGenerator:
                 lines.append(f"- `{prefix} {fn.name}({args_str}){ret_str}` *(Line {fn.lineno})*{doc_str}")
             lines.append("")
 
-        # Footer backlink to overview
-        lines.append("---\n*Part of the [[_Overview|Architecture Overview]]*")
 
         note_file = self.output_dir / f"{mod_name}.md"
         note_file.write_text("\n".join(lines), encoding="utf-8")

@@ -1,4 +1,4 @@
-# 🕸️ Obsidian Code Graph
+# Obsidian Code Graph
 
 > Turn any Python codebase into an interactive, physics-driven knowledge graph inside Obsidian.
 
@@ -10,16 +10,16 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- 🚀 **Zero Manual Linking:** Automatically maps imports and relative paths into native Obsidian `[[wiki-links]]`.
-- 🔴 **Circular Dependency Detection:** Runs DFS across the dependency graph to catch circular import loops.
-- 👻 **Dead Code Finder:** Identifies orphan files with zero incoming references.
-- 🎨 **Force-Directed Graph:** Comes with tuned physics, directional arrows, and color-coded node groups (red for cycles, orange for orphans, purple for entrypoints).
+- **Zero Manual Linking:** Automatically maps imports and relative paths into native Obsidian `[[wiki-links]]`.
+- **Circular Dependency Detection:** Runs DFS across the dependency graph to catch circular import loops.
+- **Dead Code Finder:** Identifies orphan files with zero incoming references.
+- **Force-Directed Graph:** Comes with tuned physics, directional arrows, and color-coded node groups (red for cycles, orange for orphans, purple for entrypoints).
 
 ---
 
-## 🔌 Quickstart (Obsidian Plugin)
+## Quickstart (Obsidian Plugin)
 
 Clone or copy this repository directly into your vault's plugins folder:
 
@@ -33,7 +33,7 @@ git clone https://github.com/itsnacho/obsidian-code-graph.git "<path-to-vault>/.
 
 ---
 
-## 💻 Standalone CLI
+## Standalone CLI
 
 You can also run the engine directly from your terminal without opening Obsidian:
 
@@ -47,7 +47,7 @@ py -3 -m src.engine.cli "path/to/project" -o my_code_vault
 
 ---
 
-## 🛠️ How It Works
+## How It Works
 
 1. **AST Engine (`src/engine/`):** Scans `.py` files and uses Python's standard `ast` module to extract imports, classes, and functions without running any code.
 2. **Graph Analysis:** Builds a directed graph to calculate dependencies, detect cycles, and spot orphan modules.
@@ -56,6 +56,6 @@ py -3 -m src.engine.cli "path/to/project" -o my_code_vault
 
 ---
 
-## 📄 License
+## License
 
 MIT — built by [itsnacho](https://github.com/itsnacho).
